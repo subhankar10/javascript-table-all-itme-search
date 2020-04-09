@@ -1,0 +1,32 @@
+<script>
+                $("#myInput").keyup(function () {
+    var value = this.value.toLowerCase().trim();
+
+    $("tbody tr").each(function (index) {
+        // console.log(index);
+        // if (!index) return;
+        $(this).find("td").each(function () {
+            var id = $(this).text().toLowerCase().trim();
+            var not_found = ((id.indexOf(value)) == -1);
+            $(this).closest('tr').toggle(!not_found);
+            return not_found;
+        });
+    });
+});
+            </script>
+            html
+            <label style="padding-left:920px"><input type="text" class="form-control form-control-sm" placeholder="Search" aria-controls="dtBasicExample" id="myInput"></label>
+                    </h3>
+                  </div>
+                  
+                  <div class="table-responsive">
+                    <table class="table card-table table-vcenter text-nowrap" id="myTable">
+                      <thead>
+                        <tr>
+                            <th class="w-1">Id</th>
+                            <th>Product Name</th>
+                            <th>Product Type</th>
+				            <th>Barcode</th>
+				            <th>Product Color</th>
+                        </tr>
+                      </thead>
